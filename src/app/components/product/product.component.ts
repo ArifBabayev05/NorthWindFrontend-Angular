@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Product } from 'src/app/models/product';
 
 @Component({
   selector: 'app-product',
@@ -6,12 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent {
-  product1:any = {productId:1, productName:'Bottle', categoryId:1, unitPrice:5}
-  product2:any = {productId:2, productName:'Laptop', categoryId:1, unitPrice:5}
-  product3:any = {productId:3, productName:'Keyboard', categoryId:1, unitPrice:5}
-  product4:any = {productId:4, productName:'Mouse', categoryId:1, unitPrice:5}
-  product5:any = {productId:5, productName:'Printer', categoryId:1, unitPrice:5}
-  product6:any = {productId:6, productName:'Camera', categoryId:1, unitPrice:5}
-  
-  products = [this.product1,this.product2,this.product3,this.product4,this.product5,this.product6]
+
+  products:Product[] = []
 }
