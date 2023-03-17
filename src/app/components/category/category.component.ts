@@ -10,7 +10,7 @@ import { CategoryService } from 'src/app/services/category.service';
 export class CategoryComponent implements OnInit{
 
   categories: Category[] = [];
-  dataLoaded = false; 
+  currentCategory : Category;
 
   constructor(private categoryService : CategoryService){}
   ngOnInit(): void {
@@ -21,10 +21,19 @@ export class CategoryComponent implements OnInit{
   getCategory(){
     this.categoryService.getCategory().subscribe((res)=>{
       this.categories = res.data;
-      this.dataLoaded = true;
     })
   }
   setCurrentCategory(category:Category){
-    console.log(category.categoryName)
+    this.currentCategory = category;
+  }
+
+  getCurrentCategory(category:Category){
+    if(category == this.currentCategory ){
+      return "list-group-item active"
+    }
+    else{
+      return "list-group-item"
+      
+    }
   }
 }

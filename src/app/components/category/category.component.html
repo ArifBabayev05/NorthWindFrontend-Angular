@@ -1,5 +1,7 @@
 <ul class="list-group">
     <li (click) = "setCurrentCategory(category)"
         *ngFor="let category of categories"
-        class="list-group-item">{{category.categoryName}}</li>
+        [class]="getCurrentCategory(category)">{{category.categoryName}}</li>
+        
   </ul>
+<h1 *ngIf="currentCategory">{{currentCategory.categoryName }}</h1>
