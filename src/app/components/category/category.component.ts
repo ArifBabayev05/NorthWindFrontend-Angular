@@ -25,6 +25,6 @@ export class CategoryComponent implements OnInit{
     })
   }
   setCurrentCategory(category:Category){
-    
+    console.log(category.categoryName)
   }
 }
