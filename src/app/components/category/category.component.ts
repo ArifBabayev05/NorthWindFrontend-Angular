@@ -24,4 +24,7 @@ export class CategoryComponent implements OnInit{
       this.dataLoaded = true;
     })
   }
+  setCurrentCategory(category:Category){
+    
+  }
 }
