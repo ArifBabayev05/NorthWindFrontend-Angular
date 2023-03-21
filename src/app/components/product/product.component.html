@@ -3,6 +3,16 @@
         <span class="visually-hidden">Loading...</span>
     </div>
 </div>
+
+<div class="mb-3">
+    <label for="filterText" class="form-label">Search Product</label>
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Search..."/>
+</div>
+
+<div *ngIf="filterText" class="alert alert-success">
+    {{filterText}}
+</div>
+
 <table class="table">
     <thead *ngIf="dataLoaded==true">
         <tr>
@@ -10,15 +20,17 @@
             <th>Product Name</th>
             <th>Category Id</th>
             <th>Price</th>
+            <th>Price with VAT</th>
             <th>Unit in Stock</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let product of products">
             <td>{{product.productId}}</td>
-            <td>{{product.productName}}</td>
+            <td>{{product.productName |uppercase}}</td>
             <td>{{product.categoryId}}</td>
-            <td>{{product.unitPrice}}</td>
+            <td>{{product.unitPrice |currency}}</td>
+            <td>{{product.unitPrice |vatAdded:18 |currency}}</td>
             <td>{{product.unitsInStock}}</td>
 
         </tr>
