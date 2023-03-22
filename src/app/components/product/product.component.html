@@ -6,7 +6,7 @@
 
 <div *ngIf="dataLoaded==true" class="mb-3">
     <label for="filterText" class="form-label">Search Product</label>
-    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Search..."/>
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Search..." />
 </div>
 
 <div *ngIf="filterText" class="alert alert-success">
@@ -22,6 +22,7 @@
             <th>Price</th>
             <th>Price with VAT</th>
             <th>Unit in Stock</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -32,6 +33,11 @@
             <td>{{product.unitPrice |currency}}</td>
             <td>{{product.unitPrice |vatAdded:18 |currency}}</td>
             <td>{{product.unitsInStock}}</td>
+            <td>
+                <button (click)="addToCart(product)" type="button" class="btn btn-success btn-xs">
+                    Add basket
+                </button>
+            </td>
 
         </tr>
     </tbody>

@@ -9,6 +9,8 @@ import { NaviComponent } from './components/navi/navi.component';
 import { VatAddedPipe } from './pipes/vat-added.pipe';
 import { FormsModule } from '@angular/forms';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';  
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations"
+import {ToastrModule} from "ngx-toastr"
 
 @NgModule({
   declarations: [
@@ -23,8 +25,11 @@ import { FilterPipePipe } from './pipes/filter-pipe.pipe';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
-
+    FormsModule,
+    ToastrModule.forRoot({
+      positionClass:"toast-top-right"
+    }),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
