@@ -29,7 +29,7 @@ export class CartService {
     return CartItems;
   }
 
-  delete(product:Product){
+  removeFromCart(product:Product){
     let item:CartItem = CartItems.find(c=>c.product.productId === product.productId)
 
     CartItems.splice(CartItems.indexOf(item),1);
