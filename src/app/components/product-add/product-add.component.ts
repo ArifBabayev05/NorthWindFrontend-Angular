@@ -8,20 +8,25 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class ProductAddComponent implements OnInit {
 
+
   productAddForm: FormGroup
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.createProductAddForm();
-   }
+  }
 
   createProductAddForm() {
     this.productAddForm = this.formBuilder.group({
-         productName:["",Validators.required],
-         unitPricte:["",Validators.required],
-         unitInStock:["",Validators.required],
-         categoryId:["",Validators.required]
+      productName: ["", Validators.required],
+      unitPrice: ["", Validators.required],
+      unitsInStock: ["", Validators.required],
+      categoryId: ["", Validators.required]
 
     })
+  }
+
+  add() {
+    console.log("test")
   }
 }

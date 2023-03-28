@@ -7,6 +7,7 @@ import { ProductComponent } from './components/product/product.component';
 import { CategoryComponent } from './components/category/category.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { VatAddedPipe } from './pipes/vat-added.pipe';
+
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';  
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations"
@@ -17,11 +18,14 @@ import { ProductAddComponent } from './components/product-add/product-add.compon
 @NgModule({
   declarations: [
     AppComponent,
+    
     ProductComponent,
     CategoryComponent,
     NaviComponent,
+
     VatAddedPipe,
     FilterPipePipe,
+
     CartSummaryComponent,
     ProductAddComponent
   ],

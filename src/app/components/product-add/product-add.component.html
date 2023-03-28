@@ -6,10 +6,30 @@
             </div>
             <div class="card-body">
                 <form [formGroup]="productAddForm">
-                    <div class="form-group">
-                        <input type="text" id="productName" formControlName="productName" class="form-control" placeholder="Product Name"/>
+                    <div class="form-group mb-3">
+                        <label for="productName">Product Name</label>
+                        <input type="text" id="productName" formControlName="productName" class="form-control"
+                            placeholder="Product Name" />
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="productName">Unit Price</label>
+                        <input type="number" id="unitPrice" formControlName="unitPrice" class="form-control"
+                            placeholder="Unit Price" />
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="productName">Units In Stock</label>
+                        <input type="number" id="unitsInStock" formControlName="unitsInStock" class="form-control"
+                            placeholder="Units In Stock" />
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="productName">Category Id</label>
+                        <input type="number" id="categoryId" formControlName="categoryId" class="form-control"
+                            placeholder="Category Id" />
                     </div>
                 </form>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-success" (click)="add()" type="submit">Add</button>
             </div>
         </div>
     </div>
